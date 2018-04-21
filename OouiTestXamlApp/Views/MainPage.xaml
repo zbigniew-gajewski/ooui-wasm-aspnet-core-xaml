@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:OouiTestXamlApp"
+             x:Class="OouiTestXamlApp.MainPage">
+
+    <Grid BackgroundColor="SeaShell">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="OOUI WASM Here!"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               BackgroundColor="Aqua" />
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Text="OOUI WASM Here!"
+               BackgroundColor="MintCream"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="OOUI WASM Here!"
+               BackgroundColor="Bisque"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="OOUI WASM Here!"
+               TextColor="White"
+               BackgroundColor="Green"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                BackgroundColor="LightBlue"
+                Command="{Binding ButtonClickedCommand, Mode=TwoWay}"
+                Text="{Binding ButtonText}" />
+    </Grid>
+
+</ContentPage>

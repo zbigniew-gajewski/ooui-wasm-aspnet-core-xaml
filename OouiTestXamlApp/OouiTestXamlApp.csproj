@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ooui" Version="0.10.222" />
+    <PackageReference Include="Ooui.Forms" Version="0.10.222" />
+    <PackageReference Include="Ooui.Wasm" Version="0.10.222" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\*.*  $(SolutionDir)OouiTestWeb\wwwroot\*.*&#xD;&#xA;xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\managed\*.*  $(SolutionDir)OouiTestWeb\wwwroot\managed\*.*" />
+  </Target>
+</Project>
