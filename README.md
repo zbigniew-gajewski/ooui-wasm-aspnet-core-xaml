@@ -19,8 +19,7 @@ The idea is to copy necessary files from OouiTestXamlApp project to OouiTestWeb\
   * restore nuget packages
   * rebuild solution
 * from command line:
-  * **cd** *ooui-wasm-aspnet-core-xaml*
-  * **cd** *OouiTestWeb*
+  * **cd** *cd ooui-wasm-aspnet-core-xaml\OouiTestWeb*
   * **dotnet run** - see the **[port]** server is listening on (shoul be 52222)
 * in ***OouiTestXamlApp*** project change the UI and build OouiTestXamlApp project only (server side will not compile since it is running all the time)
 * run the browser and go to: ***localhost:[port]***
