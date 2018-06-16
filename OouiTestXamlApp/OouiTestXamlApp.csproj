@@ -21,6 +21,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\*.*  $(SolutionDir)OouiTestWeb\wwwroot\*.*&#xD;&#xA;xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\managed\*.*  $(SolutionDir)OouiTestWeb\wwwroot\managed\*.*" />
+    <Exec Command="rem xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\*.*  $(SolutionDir)OouiTestWeb\wwwroot\*.*&#xD;&#xA;rem xcopy /y $(SolutionDir)OouiTestXamlApp\bin\Debug\netstandard2.0\dist\managed\*.*  $(SolutionDir)OouiTestWeb\wwwroot\managed\*.*" />
   </Target>
 </Project>

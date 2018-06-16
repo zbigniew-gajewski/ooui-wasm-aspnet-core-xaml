@@ -5,6 +5,8 @@
     using Microsoft.AspNetCore.StaticFiles;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.FileProviders;
+    using System.IO;
 
     public class Startup
     {
@@ -38,10 +40,16 @@
                 app.UseExceptionHandler("/Home/Error");
             }
 
+
+            var parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory());
+            var newWwwRootDirectory = Path.Combine(parentDirectory.FullName, "OouiTestXamlApp", "bin", "Debug", "netstandard2.0", "dist");
+
+
             app.UseDefaultFiles();
             app.UseStaticFiles(new StaticFileOptions{
-                ContentTypeProvider = provider}
-            );
+                ContentTypeProvider = provider,
+                 FileProvider = new PhysicalFileProvider(newWwwRootDirectory)
+            });
 
             app.UseMvc(routes =>
             {
